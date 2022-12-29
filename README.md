@@ -34,16 +34,16 @@ Sun Tzu
 
 The usb protocol (in its basic and slow form in this case usb 1.0 but backwards compatible up to usb3(?)) can be briefly summarized in a Client (USB DEVICE) and Server (our PC) architecture.
 Each request from the Server must be satisfied by the client who reacts with an IN or OUT message at a certain port (ENDPOINT) of the device.
-
-Our first problem is finding the endpoint addresses (IN/OUT), which is easily solved with lsusb command:
+Our first problem is find the device, which is easily solved with lsusb command:
 
 ```bash
-$ ls
+$ lsusb
 $ Bus 002 Device 008: ID XXXX:XXXX Focusrite-Novation Launchpad
 ```
 
-"Bus" indicates the USB port that the device faces.
-"Device" the number of the device mounted on the system.
+"Bus"(002) indicates the USB port that the device faces.
+"Device"(008)the number of the device mounted on the system.
+
 Using these two arguments  
 
 ```bash 
@@ -56,7 +56,7 @@ we will get an answer:
 it was added under study and should be read as a comment**
 
  #### WARNING pt2!
-**There is a lot to read but we are only interested in a FEW highlighted lines.**
+**There is a lot to read but we are only interested in a FEW lines.**
 
 ```bash
 Device: ID 1235:000e Focusrite-Novation Launchpad
