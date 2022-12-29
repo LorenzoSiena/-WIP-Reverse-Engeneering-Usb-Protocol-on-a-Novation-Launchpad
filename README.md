@@ -52,11 +52,11 @@ lsusb -D /dev/bus/usb/002/080
 we will get an answer:
 
  #### WARNING!
-do you see this arrow? -> 
-it was added under study and should be read as a comment
+**do you see this arrow? -> 
+it was added under study and should be read as a comment**
 
  #### WARNING pt2!
-There is a lot to read but we are only interested in a FEW highlighted lines.
+**There is a lot to read but we are only interested in a FEW highlighted lines.**
 
 ```bash
 Device: ID 1235:000e Focusrite-Novation Launchpad
@@ -118,14 +118,37 @@ Device Descriptor:
     	     	 Usage Type               Data		->ACCEPT INPUT VALUES(00) [00 = Data Endpoint,01 = Feedback Endpoint,10 = Explicit Feedback Data Endpoint,11 = Reserved]
     	   	 wMaxPacketSize     0x0008  1x 8 bytes	->Maximum Packet Size this endpoint is capable of sending or receiving (8 byte=8 file da 8 bit=64bit)
     	    	bInterval              10		->Interval for polling endpoint data transfers 10ms
+          
+       Endpoint Descriptor:
+    	  	  bLength                 7
+    	   	 bDescriptorType         5
+    	  	  bEndpointAddress     0x02  EP 2 OUT
+    	   	 bmAttributes            3
+    	   	   Transfer Type            Interrupt
+    	 	   Synch Type               None
+    	  	   Usage Type               Data
+    	   	 wMaxPacketSize     0x0008  1x 8 bytes
+    	    	bInterval              10          
+
 ```
-The path we have to travel to reach an endpoint and finally be able to communicate is quite straight forward and will be :
-DeviceDescriptor->ConfigurationDescriptor->InterfaceDescriptor->Endpoint
-where
-DeviceDescriptor= Our Device
-ConfigurationDescriptor= The only one we have 
+The path we have to travel to reach an endpoint and finally be able to communicate is quite straight forward and will be :<br><br>
+**DeviceDescriptor**->**ConfigurationDescriptor**->**InterfaceDescriptor**->**Endpoint**<br><br>
+where:<br>
+**DeviceDescriptor**= Our Device<br>
+**ConfigurationDescriptor**= The only one we have but can be multiple and depends on how the device is powered,can contain multiple interfaces.<br>
+**InterfaceDescriptor**= This is where groups of endpoints live, a device can have multiple interfaces for different functions.<br>
+**EndpointDescriptor**=We have 2! one receiving IN and one sending OUT.<br>
+(plus one the famous and hidden **ep0** but it's for resetting/setting/flashing/GeneralQuering the device)<br>
 
+Must be the LEDS RGB!
+```bash
+   	bEndpointAddress     0x81  EP 1 IN	
+```
 
+Must be the keys pressed!
+```bash
+    bEndpointAddress     0x02  EP 2 OUT
+```
 
 # PROTOCOLS
 
