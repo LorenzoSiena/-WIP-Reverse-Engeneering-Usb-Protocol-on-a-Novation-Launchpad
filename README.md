@@ -1,7 +1,11 @@
 # -WIP-Reverse-Engineering-Usb-Protocol-on-a-Novation-Launchpad
 This is a proof of work on how to use and control a usb (1.0) device (Novation Launchpad) without using a prebuild driver.
+
+https://github.com/LorenzoSiena/-WIP-Reverse-Engeneering-Usb-Protocol-on-a-Novation-Launchpad/assets/74120782/1a00b600-be3f-40d3-a753-6f260ef44539
+
 # DISCLAIMER 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. The software is released under the GNU General Public License version 3.0 (GPLv3) and is provided without warranty. Use at your own risk."
+
 
 # WHY
 It has always seemed strange to me having to use a driver to use a device and having to submit to the benevolence of the manufacturer to be able to use it, and therefore having a LaunchPad aside I thought it would be useful to save it from obsolescence and be able to use it as I pleased.
