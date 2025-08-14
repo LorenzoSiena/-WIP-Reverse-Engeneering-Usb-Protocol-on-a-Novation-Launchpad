@@ -1,4 +1,4 @@
-# -WIP-Reverse-Engineering-Usb-Protocol-on-a-Novation-Launchpad
+# A WIP Reverse Engineering Usb Protocol on a Novation Launchpad
 This is a proof of work on how to use and control a usb (1.0) device (Novation Launchpad) without using a prebuild driver.
 
 https://github.com/LorenzoSiena/-WIP-Reverse-Engeneering-Usb-Protocol-on-a-Novation-Launchpad/assets/74120782/1a00b600-be3f-40d3-a753-6f260ef44539
